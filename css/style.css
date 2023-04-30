@@ -1,0 +1,1460 @@
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap");
+@import url("animate.css");
+@import url("font-awesome.min.css");
+@font-face {
+  font-family: 'segeoui';
+  src: url("../fonts/SEGOEUI.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'segeoui', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.heading {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 991.5px) {
+  .heading {
+    margin-bottom: 2rem;
+  }
+}
+
+.heading.left {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: left;
+}
+
+.heading.left h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: auto;
+}
+
+.heading.small-left {
+  text-align: left;
+}
+
+@media (max-width: 991.5px) {
+  .heading.small-left {
+    text-align: center;
+  }
+}
+
+.heading.small-left h2 {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.heading.small-left h2::after {
+  margin: 0;
+}
+
+@media (max-width: 991.5px) {
+  .heading.small-left h2::after {
+    margin: auto;
+  }
+}
+
+.heading.small {
+  margin-bottom: 30px;
+}
+
+.heading.small h2 {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.heading h2 {
+  font-family: "El Messiri", sans-serif;
+  font-size: 36px;
+  padding-bottom: 10px;
+  text-transform: capitalize;
+  font-weight: 700;
+  position: relative;
+  letter-spacing: 0.6px;
+  background: #3A5D8C;
+  background: -webkit-gradient(linear, left top, right top, from(#3A5D8C), to(#56a5e8));
+  background: linear-gradient(to right, #3A5D8C 0%, #56a5e8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 991.5px) {
+  .heading h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.heading h2::after {
+  content: '';
+  position: absolute;
+  background: #56a5e8;
+  width: 80px;
+  height: 5px;
+  border-radius: 3px;
+  left: 0;
+  bottom: 0px;
+  right: 0;
+  margin: auto;
+}
+
+@media (max-width: 991.5px) {
+  .heading h2::after {
+    width: 75px;
+  }
+}
+
+p {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 0rem;
+  font-size: 14px;
+  color: #3a5d8c;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  margin-bottom: 0px;
+  line-height: 1.75;
+}
+
+@media (max-width: 991.5px) {
+  p.heading-text-lg {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+p.heading-text-sm {
+  font-size: 1rem;
+  color: #3a5d8c;
+  text-align: center;
+  width: 85%;
+  margin: auto;
+  margin-bottom: 1.5rem;
+  line-height: 2rem;
+}
+
+@media (max-width: 991.5px) {
+  p.heading-text-sm {
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+}
+
+p.heading-text-sm.wd-40 {
+  width: 40%;
+}
+
+@media (max-width: 991.5px) {
+  p.heading-text-sm.wd-40 {
+    width: 80%;
+  }
+}
+
+.btn.btn-black {
+  background: #000000;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.12rem;
+}
+
+.btn.btn-yellow {
+  background: #3a5d8c;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  font-size: 1.12rem;
+}
+
+.btn.btn-yellow:hover {
+  background: #000000;
+}
+
+.img-wrapper {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.btn-read {
+  background: -webkit-linear-gradient(0deg, #3a5d8c, #56a5e8);
+  border-radius: 4px;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 25px 13px;
+}
+
+.btn-read:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 99;
+}
+
+nav.navbar.stricked-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  -webkit-transform: translateY(-110%);
+  transform: translateY(-110%);
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+nav.navbar.stricked-menu.stricky-fixed {
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+@media (max-width: 991.5px) {
+  nav.navbar.stricked-menu.stricky-fixed .navbar-collapse {
+    background: #000;
+    padding: 1rem;
+  }
+  nav.navbar.stricked-menu.stricky-fixed .navbar-collapse .navbar-nav .nav-item .nav-link.active {
+    border-radius: 4px;
+  }
+}
+
+nav.navbar.navbar-expand-lg .navbar-collapse {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light .navbar-nav .nav-item {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light .navbar-nav .nav-item:first-child {
+  padding-left: 0px;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light .navbar-nav .nav-item:last-child {
+  padding-right: 0px;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light .navbar-nav .nav-item .nav-link {
+  color: #3a5d8c;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light .navbar-nav .nav-item .nav-link.active {
+  color: #3a5d8c;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light .navbar-nav .nav-item .nav-link.active:hover {
+  color: #3a5d8c;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light .navbar-nav .nav-item .nav-link:hover {
+  color: #56a5e8;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light .navbar-toggler {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light .navbar-toggler .navbar-toggler-icon {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
+@media (max-width: 991.5px) {
+  nav.navbar.original .navbar-collapse {
+    background: #000;
+    padding: 1rem;
+  }
+  nav.navbar.original .navbar-collapse .navbar-nav .nav-item .nav-link.active {
+    border-radius: 4px;
+  }
+}
+
+nav.navbar .navbar-brand img {
+  width: 160px;
+  max-width: 160px;
+}
+
+@media (max-width: 991.5px) {
+  nav.navbar .navbar-brand img {
+    width: 120px;
+  }
+}
+
+.banner {
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner .owl-item.active .left-side,
+.banner .owl-item.active .right-side {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+.banner .item {
+  height: 100vh;
+  background: #ffffff;
+  position: relative;
+  padding-top: 121px;
+}
+
+.banner .item::before {
+  content: '';
+  position: absolute;
+  background: url(../images/banner/banner-bg.png) center left;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.banner .item .container {
+  height: 100%;
+}
+
+.banner .item .wrapper {
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.banner .item .wrapper h1 {
+  font-family: "El Messiri", sans-serif;
+  font-size: 52px;
+  font-weight: 600;
+  color: #3a5d8c;
+}
+
+.banner .item .wrapper p {
+  font-size: 16px;
+  color: #3a5d8c;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  width: 85%;
+  margin-bottom: 50px;
+}
+
+.banner .item .wrapper .btn-lg {
+  background: -webkit-linear-gradient(0deg, #3a5d8c, #56a5e8);
+  border-radius: 4px;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px 30px 15px;
+}
+
+.banner .item .wrapper .btn-lg:hover {
+  text-decoration: none;
+  box-shadow: 0px 0px 7px 0px rgba(58, 93, 140, 0.75);
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(58, 93, 140, 0.75);
+  -moz-box-shadow: 0px 0px 7px 0px rgba(58, 93, 140, 0.75);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.banner .owl-carousel {
+  position: relative;
+}
+
+.banner .owl-carousel .owl-dots {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.banner .owl-carousel button.owl-dot {
+  width: 10px;
+  height: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0px;
+}
+
+.banner .owl-carousel button.owl-dot span {
+  background: #3a5d8c;
+  margin: 0px;
+  position: relative;
+}
+
+.banner .owl-carousel button.owl-dot span::after {
+  content: "\f111";
+  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  color: #3a5d8c;
+  top: -10px;
+  position: absolute;
+  right: -7px;
+  margin: auto;
+}
+
+.banner .owl-carousel button.owl-dot.active {
+  background: transparent;
+}
+
+.banner .owl-carousel button.owl-dot.active span::after {
+  content: "\f192";
+  /* this is your text. You can also use UTF-8 character codes as I do here */
+}
+
+.banner .owl-carousel button:focus {
+  outline: none;
+}
+
+.about {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.what-we-do {
+  background: #f1f4f6;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.what-we-do .item {
+  width: 100%;
+  height: 300px;
+  color: #fff;
+  padding: 0px 5px;
+}
+
+.what-we-do .item .inner-content {
+  height: 100%;
+  background: #333;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 15px;
+  text-decoration: none;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.what-we-do .item .inner-content::before {
+  content: '';
+  position: absolute;
+  background: rgba(58, 93, 140, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+}
+
+.what-we-do .item .inner-content:hover::before {
+  content: '';
+  position: absolute;
+  background: -webkit-linear-gradient(90deg, #3a5d8c, #56a5e8);
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+}
+
+.what-we-do .item .inner-content h4 {
+  font-size: 16px;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-decoration: none;
+  position: relative;
+  z-index: 999;
+}
+
+.what-we-do .item .inner-content p {
+  color: #ffffff;
+  position: relative;
+  z-index: 999;
+}
+
+.what-we-do .item.item-1 .inner-content {
+  background: url(../images/whatwedo/img-1.jpg) center;
+  background-size: cover;
+}
+
+.what-we-do .item.item-2 .inner-content {
+  background: url(../images/whatwedo/img-2.jpg) center;
+  background-size: cover;
+}
+
+.what-we-do .item.item-3 .inner-content {
+  background: url(../images/whatwedo/img-3.jpg) center;
+  background-size: cover;
+}
+
+.what-we-do .item.item-4 .inner-content {
+  background: url(../images/whatwedo/img-4.jpg) center;
+  background-size: cover;
+}
+
+.what-we-do .item.item-5 .inner-content {
+  background: url(../images/whatwedo/img-5.jpg) center;
+  background-size: cover;
+}
+
+.what-we-do .item.item-6 .inner-content {
+  background: url(../images/whatwedo/img-6.jpg) center;
+  background-size: cover;
+}
+
+.what-we-do .item.item-7 .inner-content {
+  background: url(../images/whatwedo/img-7.jpg) center;
+  background-size: cover;
+}
+
+.what-we-do .item.item-8 .inner-content {
+  background: url(../images/whatwedo/img-8.jpg) center;
+  background-size: cover;
+}
+
+.what-we-do .item.item-9 .inner-content {
+  background: url(../images/whatwedo/img-9.jpg) center;
+  background-size: cover;
+}
+
+.what-we-do .owl-carousel {
+  position: relative;
+}
+
+.what-we-do .owl-carousel .owl-nav {
+  position: absolute;
+  top: -73px;
+  right: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 99999;
+}
+
+.what-we-do .owl-carousel button.owl-prev {
+  width: 20px;
+  height: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+}
+
+.what-we-do .owl-carousel button.owl-prev span {
+  background: transparent;
+  margin: 0px;
+  position: relative;
+  color: transparent;
+  width: 20px;
+  color: transparent;
+}
+
+.what-we-do .owl-carousel button.owl-prev span::after {
+  content: "\f177";
+  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  color: #3a5d8c;
+  top: 0;
+  position: absolute;
+  right: 0;
+  margin: auto;
+  line-height: normal;
+  width: 20px;
+  font-size: 20px;
+}
+
+.what-we-do .owl-carousel button.owl-next {
+  width: 20px;
+  height: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+}
+
+.what-we-do .owl-carousel button.owl-next span {
+  background: transparent;
+  margin: 0px;
+  position: relative;
+  color: transparent;
+  width: 20px;
+}
+
+.what-we-do .owl-carousel button.owl-next span::after {
+  content: "\f178";
+  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  color: #56a5e8;
+  top: 0;
+  position: absolute;
+  right: 0;
+  margin: auto;
+  line-height: normal;
+  font-size: 20px;
+}
+
+.what-we-do .owl-carousel button:focus {
+  outline: none;
+}
+
+.choose-us {
+  padding-top: 100px;
+}
+
+.choose-us h3 {
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #3a5d8c;
+  letter-spacing: 0.5px;
+}
+
+.choose-us .right-side .inner-content {
+  text-align: center;
+}
+
+.choose-us .right-side .inner-content img {
+  width: 75%;
+}
+
+.gallery {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #f1f4f6;
+}
+
+.gallery .gallery-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.gallery .gallery-items .item {
+  width: 32%;
+  min-height: 250px;
+  background: #3a5d8c;
+  margin-bottom: 18px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.gallery .btn-wrapper {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.book-appointment {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.book-appointment h3 {
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #3a5d8c;
+  letter-spacing: 0.5px;
+}
+
+.book-appointment .right-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.book-appointment .right-side ul.items {
+  list-style: none;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.book-appointment .right-side ul.items li {
+  padding: 50px 15px;
+  background: #3a5d8c;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.2);
+  width: 46%;
+  margin: 2%;
+  text-align: center;
+}
+
+.book-appointment .right-side ul.items li:last-child {
+  margin-bottom: 0px;
+}
+
+.book-appointment .right-side ul.items li h4 {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.book-appointment .right-side ul.items li p {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0px;
+  letter-spacing: 0.6px;
+  text-align: center;
+}
+
+.book-appointment .right-side ul.items li i {
+  margin-right: 10px;
+}
+
+.book-appointment .call-at .inner-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.book-appointment .call-at .inner-content .left-side {
+  margin-right: 2rem;
+}
+
+.book-appointment .call-at .inner-content .right-side h2 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #3a5d8c;
+  margin-bottom: 0px;
+}
+
+.book-appointment .call-at .inner-content .right-side h3 {
+  margin-bottom: 0px;
+  color: #56a5e8;
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+}
+
+.testimonials {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: url(../images/testimonial/testimonial-bg.png) center no-repeat;
+  background-size: cover;
+}
+
+.testimonials .heading h2 {
+  background: transparent;
+  color: #ffffff;
+  -webkit-text-fill-color: unset;
+}
+
+.testimonials .heading h2::after {
+  background: #ffffff;
+}
+
+.testimonials .item {
+  margin: 0px 15px;
+  padding-top: 30px;
+}
+
+.testimonials .item .inner-content {
+  background: #ffffff;
+  padding: 100px 50px 30px;
+  color: #3a5d8c;
+  border-radius: 4px;
+  position: relative;
+}
+
+.testimonials .item .inner-content::before {
+  content: '';
+  position: absolute;
+  background: url(../images/icons/quote.png) no-repeat;
+  background-size: 100%;
+  width: 84px;
+  height: 94px;
+  top: -20px;
+  left: 50px;
+}
+
+.testimonials .item .inner-content p {
+  color: #3a5d8c;
+  font-size: 0.875rem;
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+.testimonials .item .inner-content p strong {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.testimonials .owl-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px;
+}
+
+.testimonials .owl-dots button.owl-dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0px 5px;
+  border-radius: 10px;
+}
+
+.testimonials .owl-dots button.owl-dot.active {
+  width: 40px;
+  background: white;
+}
+
+.testimonials .owl-dots button.owl-dot:focus {
+  outline: none;
+}
+
+.our-team {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.our-team .owl-carousel {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.our-team .item {
+  padding: 10px 15px;
+}
+
+.our-team .item .inner-content {
+  border-radius: 4px;
+  overflow: hidden;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-decoration: none;
+}
+
+.our-team .item .inner-content .content {
+  padding: 25px 15px;
+}
+
+.our-team .item .inner-content .content h5 {
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  font-weight: 700;
+  color: #3a5d8c;
+  text-decoration: none;
+}
+
+.our-team .item .inner-content .content p {
+  text-decoration: none;
+}
+
+.our-team .owl-carousel {
+  position: relative;
+}
+
+.our-team .owl-carousel .owl-nav {
+  position: relative;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  z-index: 99999;
+  margin-top: 20px;
+}
+
+.our-team .owl-carousel button.owl-prev {
+  width: 20px;
+  height: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+}
+
+.our-team .owl-carousel button.owl-prev span {
+  background: transparent;
+  margin: 0px;
+  position: relative;
+  color: transparent;
+  width: 20px;
+  color: transparent;
+}
+
+.our-team .owl-carousel button.owl-prev span::after {
+  content: "\f177";
+  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  color: #3a5d8c;
+  top: 0;
+  position: absolute;
+  right: 0;
+  margin: auto;
+  line-height: normal;
+  width: 20px;
+  font-size: 20px;
+}
+
+.our-team .owl-carousel button.owl-next {
+  width: 20px;
+  height: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+}
+
+.our-team .owl-carousel button.owl-next span {
+  background: transparent;
+  margin: 0px;
+  position: relative;
+  color: transparent;
+  width: 20px;
+}
+
+.our-team .owl-carousel button.owl-next span::after {
+  content: "\f178";
+  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  color: #56a5e8;
+  top: 0;
+  position: absolute;
+  right: 0;
+  margin: auto;
+  line-height: normal;
+  font-size: 20px;
+}
+
+.our-team .owl-carousel button:focus {
+  outline: none;
+}
+
+.map {
+  background: url(../images/map-bg.jpg);
+  background-size: cover;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.map iframe {
+  width: 100%;
+  border: 10px solid #ffffff !important;
+}
+
+footer {
+  padding-top: 30px;
+}
+
+footer.cs-page {
+  padding-top: 60px;
+  background: #f2f2f2;
+}
+
+footer .first h2 {
+  font-family: 'El Messiri', sans-serif;
+  color: #3a5d8c;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+footer .first p {
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+footer .first a {
+  color: #3a5d8c;
+  font-size: 12px;
+  margin-bottom: 0px;
+  text-decoration: none;
+  letter-spacing: 0.6px;
+}
+
+footer .first a:hover {
+  color: #3a5d8c;
+}
+
+footer .img-box {
+  margin-bottom: 15px;
+}
+
+footer .img-box img {
+  width: 120px;
+}
+
+footer h3.footer-heading {
+  font-family: "El Messiri", sans-serif;
+  font-size: 22px;
+  padding-bottom: 6px;
+  text-transform: capitalize;
+  font-weight: 700;
+  position: relative;
+  letter-spacing: 0.6px;
+  background: #3A5D8C;
+  background: -webkit-gradient(linear, left top, right top, from(#3A5D8C), to(#56a5e8));
+  background: linear-gradient(to right, #3A5D8C 0%, #56a5e8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+@media (max-width: 991.5px) {
+  footer h3.footer-heading {
+    font-size: 1rem;
+  }
+}
+
+footer h3.footer-heading::after {
+  content: '';
+  position: absolute;
+  background: #56a5e8;
+  width: 30px;
+  height: 3px;
+  border-radius: 3px;
+  left: 0;
+  bottom: 0px;
+  right: auto;
+  margin: auto;
+}
+
+@media (max-width: 991.5px) {
+  footer h3.footer-heading::after {
+    width: 75px;
+  }
+}
+
+footer ul.links {
+  list-style: none;
+  margin-bottom: 0px;
+  padding-left: 20px;
+}
+
+footer ul.links li {
+  margin-bottom: 10px;
+}
+
+footer ul.links li a.link {
+  font-size: 14px;
+  color: #3a5d8c;
+  text-decoration: none;
+  position: relative;
+}
+
+footer ul.links li a.link::before {
+  content: "\f105";
+  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left: -20px;
+  position: absolute;
+  top: 0;
+}
+
+footer ul.address {
+  list-style: none;
+  margin-bottom: 20px;
+  padding-left: 25px;
+}
+
+footer ul.address li {
+  margin-bottom: 10px;
+}
+
+footer ul.address li p {
+  font-size: 14px;
+  color: #3a5d8c;
+  text-decoration: none;
+  position: relative;
+}
+
+footer ul.address li p.address::before {
+  content: "\f041";
+  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left: -25px;
+  position: absolute;
+  top: 2px;
+}
+
+footer ul.address li p.phone::before {
+  content: "\f095";
+  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left: -25px;
+  position: absolute;
+  top: 2px;
+}
+
+footer ul.address li p.email::before {
+  content: "\f2b6";
+  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left: -25px;
+  position: absolute;
+  top: 2px;
+}
+
+footer ul.address li p a.link {
+  font-size: 14px;
+  color: #3a5d8c;
+  text-decoration: none;
+  position: relative;
+}
+
+footer ul.social-icons {
+  list-style: none;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer ul.social-icons li {
+  margin-right: 15px;
+}
+
+footer ul.social-icons li a.link {
+  font-size: 18px;
+  color: #3a5d8c;
+  text-decoration: none;
+  position: relative;
+}
+
+footer ul.timings {
+  list-style: none;
+  margin-bottom: 20px;
+  padding-left: 25px;
+  color: #3a5d8c;
+}
+
+footer ul.timings p {
+  font-size: 14px;
+  color: #3a5d8c;
+  text-decoration: none;
+  position: relative;
+  margin-bottom: 0px;
+}
+
+footer ul.timings p.large {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+footer ul.timings li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+footer ul.timings li.clinic::before {
+  content: "\f017";
+  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left: -25px;
+  position: absolute;
+  top: 2px;
+}
+
+footer ul.timings li.home-visit::before {
+  content: "\f015";
+  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left: -25px;
+  position: absolute;
+  top: 2px;
+}
+
+footer ul.timings li.online-session::before {
+  content: "\f109";
+  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left: -25px;
+  position: absolute;
+  top: 2px;
+}
+
+footer .copyright .inner-content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: 1px solid #ddd;
+  margin-top: 30px;
+}
+
+footer .copyright .inner-content p {
+  text-align: center;
+}
+
+.comming-soon-pg {
+  background: url(../images/commingsoon-bg.png) center no-repeat;
+  background-size: cover;
+}
+
+.comming-soon-pg .inner-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  min-height: 100vh;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.comming-soon-pg .inner-content .img-box {
+  margin-bottom: 20px;
+}
+
+.comming-soon-pg .inner-content .img-box img {
+  max-width: 240px;
+}
+
+.comming-soon-pg .inner-content h1 {
+  font-family: "El Messiri", sans-serif;
+  font-size: 36px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: #3a5d8c;
+  font-weight: 700;
+  text-align: center;
+}
+
+.comming-soon-pg .inner-content .content {
+  padding-top: 30px;
+  border-top: 1px solid #dddddd;
+  margin-top: 30px;
+}
+
+.comming-soon-pg .inner-content p {
+  color: #3a5d8c;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.comming-soon-pg .inner-content p.large-text {
+  font-size: 32px;
+  color: #3a5d8c;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1.5;
+}
+
+.comming-soon-pg .inner-content p.large-text span {
+  display: block;
+  color: #56a5e8;
+  font-weight: 600;
+}
+
+.innerpg-banner {
+  background: url(../images/banner/inner-pg.png) center no-repeat #ffffff;
+  background-size: cover;
+  position: relative;
+  padding-top: 121px;
+  border-bottom: 5px solid #f1f4f6;
+}
+
+.innerpg-banner .container .inner-content {
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.innerpg-banner .container .inner-content h1 {
+  font-family: "El Messiri", sans-serif;
+  color: #3a5d8c;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-bottom: 0px;
+}
+/*# sourceMappingURL=style.css.map */

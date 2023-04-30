@@ -1,0 +1,1435 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+// font-family: 'El Messiri', sans-serif;
+
+@font-face {
+    font-family: 'segeoui';
+    src: url('../fonts/SEGOEUI.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url("animate.css");
+@import url("font-awesome.min.css");
+
+$font-elmessiri: 'El Messiri', sans-serif;
+
+$blue-color: #3a5d8c;
+$light-blue-color: #56a5e8;
+$black-color: #000000;
+$white-color: #ffffff;
+
+body {
+    font-family: 'segeoui', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.heading {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 991.5px) {
+        margin-bottom: 2rem;
+    }
+
+    &.left {
+        justify-content: flex-start;
+        text-align: left;
+
+        h2 {
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: auto;
+            }
+        }
+    }
+
+    &.small-left {
+        text-align: left;
+
+        @media (max-width: 991.5px) {
+            text-align: center;
+        }
+
+
+        h2 {
+            font-size: 2rem;
+            text-transform: capitalize;
+
+            &::after {
+                margin: 0;
+
+                @media (max-width: 991.5px) {
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+    &.small {
+        margin-bottom: 30px;
+
+        h2 {
+            font-size: 2rem;
+            text-transform: capitalize;
+        }
+    }
+
+    h2 {
+        font-family: $font-elmessiri;
+        font-size: 36px;
+        padding-bottom: 10px;
+        text-transform: capitalize;
+        font-weight: 700;
+        position: relative;
+        letter-spacing: 0.6px;
+        background: #3A5D8C;
+        background: -webkit-linear-gradient(to right, #3A5D8C 0%, #56a5e8 100%);
+        background: -moz-linear-gradient(to right, #3A5D8C 0%, #56a5e8 100%);
+        background: linear-gradient(to right, #3A5D8C 0%, #56a5e8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 30px;
+
+        @media (max-width: 991.5px) {
+            font-size: 1.5rem;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            background: $light-blue-color;
+            width: 80px;
+            height: 5px;
+            border-radius: 3px;
+            left: 0;
+            bottom: 0px;
+            right: 0;
+            margin: auto;
+
+            @media (max-width: 991.5px) {
+                width: 75px;
+            }
+        }
+    }
+}
+
+p {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 0rem;
+    font-size: 14px;
+    color: $blue-color;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    margin-bottom: 0px;
+    line-height: 1.75;
+    
+    &.heading-text-lg {
+        
+
+        @media (max-width: 991.5px) {
+            width: 100%;
+            font-size: 1rem;    
+        }
+    }
+
+    &.heading-text-sm {
+        font-size: 1rem;
+        color: $blue-color;
+        text-align: center;
+        width: 85%;
+        margin: auto;
+        margin-bottom: 1.5rem;
+        line-height: 2rem;
+
+        @media (max-width: 991.5px) {
+            width: 100%;
+            font-size: 0.875rem;
+            line-height: 1.5rem;    
+        }
+
+        &.wd-40 {
+            width: 40%;
+
+            @media (max-width: 991.5px) {
+                width: 80%;    
+            }
+        }
+    }
+}
+
+.btn {
+    &.btn-black {
+        background: #000000;
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 1.12rem;
+    }
+
+    &.btn-yellow {
+        background: $blue-color;
+        color: #fff;
+        padding: 0.5rem 2rem;
+        font-size: 1.12rem;
+    
+        &:hover {
+            background: $black-color;
+        }
+    }
+}
+
+.img-wrapper {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.btn-read {
+    background: -webkit-linear-gradient(0deg, $blue-color, $light-blue-color);
+    border-radius: 4px;
+    color: $white-color;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 25px 13px;
+
+    &:hover {
+        color: $white-color;
+        text-decoration: none;
+    }
+}
+
+nav {
+    &.navbar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background: transparent;
+        z-index: 99;
+
+        &.stricked-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background-color: #ffffff;
+            -webkit-box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            -webkit-transform: translateY(-110%);
+            transform: translateY(-110%);
+            -webkit-transition: all .4s ease;
+            transition: all .4s ease;
+
+            &.stricky-fixed {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+
+                @media (max-width: 991.5px) {
+                    .navbar-collapse {
+                        background: #000;
+                        padding: 1rem;
+        
+                        .navbar-nav {
+                            .nav-item {
+                                .nav-link{
+                                    &.active {
+                                        border-radius: 4px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.navbar-expand-lg {
+            .navbar-collapse {
+                justify-content: flex-end;
+            }
+
+            &.navbar-light {
+                .navbar-nav {
+                    .nav-item {
+                        padding-left: 15px;
+                        padding-right: 15px;
+
+                        &:first-child {
+                            padding-left: 0px;
+                        }
+
+                        &:last-child {
+                            padding-right: 0px;
+                        }
+                        .nav-link {
+                            color: $blue-color;
+                            font-size: 14px;
+                            font-weight: 700;
+                            letter-spacing: 0.6px;
+
+                            &.active {
+                                color: $blue-color;
+
+                                &:hover {
+                                    color: $blue-color;
+                                }
+                            }
+
+                            &:hover {
+                                color: $light-blue-color;
+                            }
+                        }
+                    }
+                }
+
+                .navbar-toggler {
+                    box-shadow: none;
+                    
+                    .navbar-toggler-icon {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+            }
+        }
+
+        &.original {
+            @media (max-width: 991.5px) {
+                .navbar-collapse {
+                    background: #000;
+                    padding: 1rem;
+    
+                    .navbar-nav {
+                        .nav-item {
+                            .nav-link{
+                                &.active {
+                                    border-radius: 4px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+
+        .navbar-brand {
+            img {
+                width: 160px;
+                max-width: 160px;
+            }
+        }
+        @media (max-width: 991.5px) {
+            .navbar-brand {
+                img {
+                    width: 120px;
+                }
+            }
+        }
+    }
+}
+
+.banner {
+    width: 100%;
+    overflow: hidden;
+
+    .owl-item{
+        &.active {
+            .left-side,
+            .right-side {
+                -webkit-animation-duration: 1s;
+                animation-duration: 1s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-backface-visibility: visible !important;
+                backface-visibility: visible !important;
+                -webkit-animation-name: zoomIn;
+                animation-name: zoomIn;
+            }
+        }
+    }
+
+    .item {
+        height: 100vh;
+        background: #ffffff;
+        position: relative;
+        padding-top: 121px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background: url(../images/banner/banner-bg.png) center left;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .container {
+            height: 100%;
+        }
+
+        .wrapper {
+            height: 100%;
+            align-items: center;
+            position: relative;
+
+            
+
+            h1 {
+                font-family: $font-elmessiri;
+                font-size: 52px;
+                font-weight: 600;
+                color: $blue-color;
+            }
+
+            p {
+                font-size: 16px;
+                color: $blue-color;
+                font-weight: 600;
+                letter-spacing: 0.6px;
+                width: 85%;
+                margin-bottom: 50px;
+            }
+
+            .btn-lg {
+                background: -webkit-linear-gradient(0deg, $blue-color, $light-blue-color);
+                border-radius: 4px;
+                color: $white-color;
+                font-weight: 700;
+                letter-spacing: 0.6px;
+                text-decoration: none;
+                display: inline-block;
+                padding: 12px 30px 15px;
+
+                &:hover {
+                    text-decoration: none;
+                    box-shadow: 0px 0px 7px 0px rgba(58,93,140,0.75);
+                    -webkit-box-shadow: 0px 0px 7px 0px rgba(58,93,140,0.75);
+                    -moz-box-shadow: 0px 0px 7px 0px rgba(58,93,140,0.75);
+                    transition: all 0.4s ease;
+                }
+            }
+        }
+    }
+
+    .owl-carousel {
+        position: relative;
+
+        .owl-dots {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        button{
+            &.owl-dot  {
+                width: 10px;
+                height: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px 0px;
+
+                span {
+                    background: $blue-color;
+                    margin: 0px;
+                    position: relative;
+
+                    &::after {
+                        content: "\f111";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                        font-family: FontAwesome;
+                        color: $blue-color;
+                        top: -10px;
+                        position: absolute;
+                        right: -7px;
+                        margin: auto;
+                    }
+                }
+                
+                &.active {
+                    background: transparent;
+
+                    span {
+                        &::after {
+                            content: "\f192";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                        }
+                    }
+                    
+                }
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+.about {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.what-we-do {
+    background: #f1f4f6;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .item {
+        width: 100%;
+        height: 300px;
+        color: #fff;
+        padding: 0px 5px;
+
+        .inner-content {
+            height: 100%;
+            background: #333;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 15px;
+            text-decoration: none;
+            color: $white-color;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                background: rgba(58,93,140,0.5);
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 9;
+            }
+
+            &:hover {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    background: -webkit-linear-gradient(90deg, $blue-color, $light-blue-color);
+                    opacity: 0.7;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 9;
+                }
+            }
+            
+            h4 {
+                font-size: 16px;
+                color: $white-color;
+                text-transform: capitalize;
+                font-weight: bold;
+                margin-bottom: 10px;
+                text-decoration: none;
+                position: relative;
+                z-index: 999;
+            }
+
+            p {
+                color: $white-color;
+                position: relative;
+                z-index: 999;
+            }
+            
+        }
+
+        &.item-1 {
+            .inner-content {
+                background: url(../images/whatwedo/img-1.jpg) center;
+                background-size: cover;
+            }
+        }
+        &.item-2 {
+            .inner-content {
+                background: url(../images/whatwedo/img-2.jpg) center;
+                background-size: cover;
+            }
+        }
+        &.item-3 {
+            .inner-content {
+                background: url(../images/whatwedo/img-3.jpg) center;
+                background-size: cover;
+            }
+        }
+
+        &.item-4 {
+            .inner-content {
+                background: url(../images/whatwedo/img-4.jpg) center;
+                background-size: cover;
+            }
+        }
+
+        &.item-5 {
+            .inner-content {
+                background: url(../images/whatwedo/img-5.jpg) center;
+                background-size: cover;
+            }
+        }
+
+        &.item-6 {
+            .inner-content {
+                background: url(../images/whatwedo/img-6.jpg) center;
+                background-size: cover;
+            }
+        }
+
+        &.item-7 {
+            .inner-content {
+                background: url(../images/whatwedo/img-7.jpg) center;
+                background-size: cover;
+            }
+        }
+
+        &.item-8 {
+            .inner-content {
+                background: url(../images/whatwedo/img-8.jpg) center;
+                background-size: cover;
+            }
+        }
+
+        &.item-9 {
+            .inner-content {
+                background: url(../images/whatwedo/img-9.jpg) center;
+                background-size: cover;
+            }
+        }
+    }
+    
+    .owl-carousel {
+        position: relative;
+
+        .owl-nav {
+            position: absolute;
+            top: -73px;
+            right: 8%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            z-index: 99999;
+        }
+        button{
+            &.owl-prev  {
+                width: 20px;
+                height: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+
+                span {
+                    background: transparent;
+                    margin: 0px;
+                    position: relative;
+                    color: transparent;
+                    width: 20px;
+                    color: transparent;
+
+                    &::after {
+                        content: "\f177";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                        font-family: FontAwesome;
+                        color: $blue-color;
+                        top: 0;
+                        position: absolute;
+                        right: 0;
+                        margin: auto;
+                        line-height: normal;
+                        width: 20px;
+                        font-size: 20px;
+                    }
+                }
+                
+                
+            }
+
+            &.owl-next  {
+                width: 20px;
+                height: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+
+                span {
+                    background: transparent;
+                    margin: 0px;
+                    position: relative;
+                    color: transparent;
+                    width: 20px;
+
+                    &::after {
+                        content: "\f178";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                        font-family: FontAwesome;
+                        color: $light-blue-color;
+                        top: 0;
+                        position: absolute;
+                        right: 0;
+                        margin: auto;
+                        line-height: normal;
+                        font-size: 20px
+                    }
+                }
+                
+                
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+.choose-us {
+    padding-top: 100px;
+
+    h3 {
+        font-size: 42px;
+        font-weight: bold;
+        line-height: 1.5;
+        margin-bottom: 30px;
+        color: $blue-color;
+        letter-spacing: 0.5px;
+    }
+
+    .right-side {
+        .inner-content {
+            text-align: center;
+
+            img {
+                width: 75%;
+            }
+        }
+    }
+}
+
+.gallery {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: #f1f4f6;
+
+    .gallery-items {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: auto;
+        justify-content: space-between;
+
+        .item {
+            width: 32%;
+            min-height: 250px;
+            background: $blue-color;
+            margin-bottom: 18px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+    }
+
+    .btn-wrapper {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.book-appointment {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    h3 {
+        font-size: 42px;
+        font-weight: bold;
+        line-height: 1.5;
+        margin-bottom: 30px;
+        color: $blue-color;
+        letter-spacing: 0.5px;
+    }
+
+    .right-side {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        ul{
+            &.items {
+                list-style: none;
+                padding-left: 0px;
+                margin-bottom: 0px;
+                width: 100%;
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                li {
+
+                    padding: 50px 15px;
+                    background: $blue-color;
+                    border-radius: 4px;
+                    -webkit-box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.2);    
+                    box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.2);
+                    width: 46%;
+                    margin: 2%;
+                    // margin-bottom: 30px;
+                    text-align: center;
+
+                    
+                    // &:nth-child(even) {
+                    //     background-color: $light-blue-color;
+                    // }
+
+                    &:last-child {
+                        margin-bottom: 0px;
+                    }
+
+                    h4 {
+                        color: $white-color;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    p {
+                        color: $white-color;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        margin-bottom: 0px;
+                        letter-spacing: 0.6px;
+                        text-align: center;
+                    }
+
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .call-at {
+        .inner-content {
+            display: flex;
+            align-items: center;
+
+            .left-side {
+                margin-right: 2rem;
+            }
+
+            .right-side {
+
+                h2 {
+                    font-size: 26px;
+                    font-weight: 700;
+                    letter-spacing: 1.5px;
+                    color: $blue-color;
+                    margin-bottom: 0px;
+                }
+
+                h3 {
+                    margin-bottom: 0px;
+                    color: $light-blue-color;
+                    font-size: 46px;
+                    font-weight: 700;
+                    letter-spacing: 3.5px;
+                }
+            }
+        }
+    }
+}
+
+.testimonials {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: url(../images/testimonial/testimonial-bg.png) center no-repeat;
+    background-size: cover;
+    
+    .heading {
+        h2 {
+            background: transparent;
+            color: #ffffff;
+            -webkit-text-fill-color: unset;
+
+            &::after {
+                background: $white-color;
+            }
+        }
+    }
+
+    .item {
+        margin: 0px 15px;
+        padding-top: 30px;
+
+        .inner-content {
+            background: $white-color;
+            padding: 100px 50px 30px;
+            color:  $blue-color;
+            border-radius: 4px;
+            position: relative;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                background: url(../images/icons/quote.png) no-repeat;
+                background-size: 100%;
+                width: 84px;
+                height: 94px;
+                top: -20px;
+                left: 50px;
+            }
+
+            p {
+                color: $blue-color;
+                font-size: 0.875rem;
+                line-height: 2;
+                margin-bottom: 0;
+
+                strong {
+                    font-weight: bold;
+                    font-size: 18px;    
+                }
+            }
+        }
+    }
+
+    .owl-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+
+        button {
+            &.owl-dot {
+                width: 10px;
+                height: 10px;
+                background: rgba(255,255,255,0.5);
+                margin: 0px 5px;
+                border-radius: 10px;
+
+                &.active {
+                    width: 40px;
+                    background: rgba(255,255,255,1);
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+.our-team {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .owl-carousel {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    
+    .item {
+        padding: 10px 15px;
+
+        .inner-content {
+            border-radius: 4px;
+            overflow: hidden;
+            background: $white-color;
+            -webkit-box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;            
+            text-decoration: none;
+            .content {
+                padding: 25px 15px;
+
+                h5 {
+                    font-size: 18px;
+                    letter-spacing: 0.6px;
+                    font-weight: 700;
+                    color: $blue-color;
+                    text-decoration: none;
+                }
+
+                p {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .owl-carousel {
+        position: relative;
+        .owl-nav {
+            position: relative;
+            left: 0px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            z-index: 99999;
+            margin-top: 20px;
+        }
+
+        button{
+            &.owl-prev  {
+                width: 20px;
+                height: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+
+                span {
+                    background: transparent;
+                    margin: 0px;
+                    position: relative;
+                    color: transparent;
+                    width: 20px;
+                    color: transparent;
+
+                    &::after {
+                        content: "\f177";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                        font-family: FontAwesome;
+                        color: $blue-color;
+                        top: 0;
+                        position: absolute;
+                        right: 0;
+                        margin: auto;
+                        line-height: normal;
+                        width: 20px;
+                        font-size: 20px;
+                    }
+                }
+                
+                
+            }
+
+            &.owl-next  {
+                width: 20px;
+                height: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+
+                span {
+                    background: transparent;
+                    margin: 0px;
+                    position: relative;
+                    color: transparent;
+                    width: 20px;
+
+                    &::after {
+                        content: "\f178";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                        font-family: FontAwesome;
+                        color: $light-blue-color;
+                        top: 0;
+                        position: absolute;
+                        right: 0;
+                        margin: auto;
+                        line-height: normal;
+                        font-size: 20px
+                    }
+                }
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+.map {
+    background: url(../images/map-bg.jpg);
+    background-size: cover;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    
+    iframe {
+        width: 100%;
+        border: 10px solid #ffffff !important;
+    }
+}
+
+footer {
+    padding-top: 30px;
+
+    &.cs-page {
+        padding-top: 60px;
+        background: #f2f2f2;
+    }
+
+    .first {
+        h2 {
+            font-family: 'El Messiri', sans-serif;
+            color: $blue-color;
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        a {
+            color: $blue-color;
+            font-size: 12px;
+            margin-bottom: 0px;
+            text-decoration: none;
+            letter-spacing: 0.6px;
+
+            &:hover {
+                color: $blue-color;
+            }
+        }
+    }
+
+    .img-box {
+        margin-bottom: 15px;
+        
+        img {
+            width: 120px;
+        }
+    }
+
+    h3 {
+        &.footer-heading {
+            font-family: $font-elmessiri;
+            font-size: 22px;
+            padding-bottom: 6px;
+            text-transform: capitalize;
+            font-weight: 700;
+            position: relative;
+            letter-spacing: 0.6px;
+            background: #3A5D8C;
+            background: -webkit-linear-gradient(to right, #3A5D8C 0%, #56a5e8 100%);
+            background: -moz-linear-gradient(to right, #3A5D8C 0%, #56a5e8 100%);
+            background: linear-gradient(to right, #3A5D8C 0%, #56a5e8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            width: max-content;
+            @media (max-width: 991.5px) {
+                font-size: 1rem;
+            }
+        
+            &::after {
+                content: '';
+                position: absolute;
+                background: $light-blue-color;
+                width: 30px;
+                height: 3px;
+                border-radius: 3px;
+                left: 0;
+                bottom: 0px;
+                right: auto;
+                margin: auto;
+        
+                @media (max-width: 991.5px) {
+                    width: 75px;
+                }
+            }
+        }
+    }
+
+    ul {
+        &.links {
+            list-style: none;
+            margin-bottom: 0px;
+            padding-left: 20px;
+
+            li {
+                margin-bottom: 10px;
+
+                a {
+                    &.link {
+                        font-size: 14px;
+                        color: $blue-color;
+                        text-decoration: none;
+                        position: relative;
+
+                        &::before {
+                            content: "\f105";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                            font-family: FontAwesome;
+                            left: -20px;
+                            position:absolute;
+                            top:0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ul {
+        &.address {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 25px;
+
+            li {
+                margin-bottom: 10px;
+
+                p {
+                    font-size: 14px;
+                    color: $blue-color;
+                    text-decoration: none;
+                    position: relative;
+
+                    &.address {
+                        &::before {
+                            content: "\f041";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                            font-family: FontAwesome;
+                            left: -25px;
+                            position:absolute;
+                            top:2px;
+                        }
+                    }
+
+                    &.phone {
+                        &::before {
+                            content: "\f095";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                            font-family: FontAwesome;
+                            left: -25px;
+                            position:absolute;
+                            top:2px;
+                        }
+                    }
+                    
+                    &.email {
+                        &::before {
+                            content: "\f2b6";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                            font-family: FontAwesome;
+                            left: -25px;
+                            position:absolute;
+                            top:2px;
+                        }
+                    }
+
+                    a {
+                        &.link {
+                            font-size: 14px;
+                            color: $blue-color;
+                            text-decoration: none;
+                            position: relative;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ul {
+        &.social-icons {
+            list-style: none;
+            margin-bottom: 0px;
+            padding-left: 0px;
+            display: flex;
+
+            li {
+                margin-right: 15px;
+
+                a {
+                    &.link {
+                        font-size: 18px;
+                        color: $blue-color;
+                        text-decoration: none;
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+
+    ul {
+        &.timings {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 25px;
+            color: $blue-color;
+
+            p {
+                font-size: 14px;
+                color: $blue-color;
+                text-decoration: none;
+                position: relative;
+                margin-bottom: 0px;
+
+                &.large {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+
+            li {
+                margin-bottom: 10px;
+                position: relative;
+
+                &.clinic {
+                    &::before {
+                        content: "\f017";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                        font-family: FontAwesome;
+                        left: -25px;
+                        position:absolute;
+                        top:2px;
+                    }
+                }
+                
+                &.home-visit {
+                    &::before {
+                        content: "\f015";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                        font-family: FontAwesome;
+                        left: -25px;
+                        position:absolute;
+                        top:2px;
+                    }
+                }
+
+                &.online-session {
+                    &::before {
+                        content: "\f109";  /* this is your text. You can also use UTF-8 character codes as I do here */
+                        font-family: FontAwesome;
+                        left: -25px;
+                        position:absolute;
+                        top:2px;
+                    }
+                }
+            }
+        }
+    }
+
+    .copyright {
+        .inner-content {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-bottom: 0px;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            border-top: 1px solid #ddd;
+            margin-top: 30px;
+
+            p {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.comming-soon-pg {
+    background: url(../images/commingsoon-bg.png) center no-repeat;
+    background-size: cover;
+
+    .inner-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        min-height: 100vh;
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+
+        .img-box {
+            margin-bottom: 20px;
+            img {
+                max-width: 240px;
+            }
+        }
+
+        h1 {
+            font-family: $font-elmessiri;
+            font-size: 36px;
+            line-height: 1.5;
+            letter-spacing: 1px;
+            color: $blue-color;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .content {
+            padding-top: 30px;
+            border-top: 1px solid #dddddd;
+            margin-top: 30px;
+        }
+
+        p {
+            color: $blue-color;
+            font-size: 18px;
+            letter-spacing: 1px;
+            margin-bottom: 0px;
+            text-align: center;
+
+            &.large-text {
+                font-size: 32px;
+                color: $blue-color;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 30px;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                line-height: 1.5;
+
+                span {
+                    display: block;
+                    color: $light-blue-color;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+
+.innerpg-banner {
+    background: url(../images/banner/inner-pg.png) center no-repeat #ffffff;
+    background-size: cover;
+    position: relative;
+    padding-top: 121px;
+    border-bottom: 5px solid #f1f4f6;
+
+    .container {
+        .inner-content {
+            
+            height: 40vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                font-family: $font-elmessiri;
+                color: $blue-color;
+                font-size: 42px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                line-height: 1.5;
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
